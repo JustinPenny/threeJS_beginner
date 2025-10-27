@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-
+// relocated glb resource to public folder and rebuilt. still no dice hosting. Thinking it has to be an AWS problem at this point
 // struggling with deployment - gtfl/glb object files don't load when deployed.
 // next attempt is to host the file in an s3 bucket and link to it in code
 
@@ -30,7 +30,7 @@ const loader = new GLTFLoader();
 // Load a glTF resource
 loader.load(
 	// resource URL
-	'public/my_house.glb',
+	'/my_house.glb',
 	function ( gltf ) {
 		scene.add( gltf.scene );
 	},
