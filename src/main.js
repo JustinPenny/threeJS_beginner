@@ -3,11 +3,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
-// struggling with deployment
-// trying github pages and aws amplify with no luck
-// https://www.youtube.com/watch?v=A00WHN32qGE
-// https://us-west-2.console.aws.amazon.com/amplify/apps/dnpvzm2458dq1/general
-// is my index.html wrong?
+// struggling with deployment - gtfl/glb object files don't load when deployed.
+// next attempt is to host the file in an s3 bucket and link to it in code
 
 
 // Setup and creation of display elements
@@ -33,7 +30,7 @@ const loader = new GLTFLoader();
 // Load a glTF resource
 loader.load(
 	// resource URL
-	'src/my_house.glb',
+	'public/my_house.glb',
 	function ( gltf ) {
 		scene.add( gltf.scene );
 	},
