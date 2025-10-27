@@ -3,7 +3,12 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 
-// Add progress bar loader and instructions for mouse controls
+// struggling with deployment
+// trying github pages and aws amplify with no luck
+// https://www.youtube.com/watch?v=A00WHN32qGE
+// https://us-west-2.console.aws.amazon.com/amplify/apps/dnpvzm2458dq1/general
+// is my index.html wrong?
+
 
 // Setup and creation of display elements
 const scene = new THREE.Scene();
@@ -28,17 +33,19 @@ const loader = new GLTFLoader();
 // Load a glTF resource
 loader.load(
 	// resource URL
-	'src/my_house.gltf',
+	'src/my_house.glb',
 	function ( gltf ) {
 		scene.add( gltf.scene );
 	},
 	// called while loading is progressing
 	function ( xhr ) {
     let width = ( xhr.loaded / xhr.total * 100 );
+		console.log(width);
 	},
 	// called when loading has errors
 	function ( error ) {
 		console.log( 'An error happened' );
+		alert("Error loading three.js resource")
 	}
 );
 
